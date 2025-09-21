@@ -1,12 +1,12 @@
 import React from "react";
+import TicTacToe from "../components/games/TicTacToe";
 
 function Home() {
   return (
-    <div>
-      <div>
-        <div>box 1</div>
-        <div>box 2</div>
-      </div>
+    <div className="flex justify-center  bg-teal-200">
+      <h1>
+        <TicTacToe />
+      </h1>
     </div>
   );
 }

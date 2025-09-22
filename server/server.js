@@ -26,27 +26,21 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "*", // change to your frontend origin in production
+    origin: "*",
     methods: ["GET", "POST"],
   },
 });
 
 io.on("connection", (socket) => {
-  console.log("User connected:", socket.id);
+  console.log("✅ User connected:", socket.id);
 
-  socket.emit("welcome", { message: "Hello from server!", id: socket.id });
-
-  socket.on("send_message", (data) => {
-    console.log("Message received:", data);
-    io.emit("receive_message", data);
-  });
+  socket.emit("welcome", { message: "Socket connected!" });
 
   socket.on("disconnect", () => {
-    console.log("User disconnected:", socket.id);
+    console.log("❌ User disconnected:", socket.id);
   });
 });
 
-// Start server
 server.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Login() {
+function Login({ onSwitch }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -99,12 +99,13 @@ function Login() {
                 </button>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Don’t have an account yet?{" "}
-                  <a
-                    href="#"
+                  <button
+                    type="button"
+                    onClick={onSwitch}
                     className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                   >
                     Sign up
-                  </a>
+                  </button>
                 </p>
               </form>
             </div>

@@ -6,6 +6,7 @@ import Header from "./components/others/Header";
 import TicTacToe from "./components/games/TicTacToe";
 import Hangman from "./components/games/Hangman";
 import Authentication from "./screens/Authentication";
+import Games from "./screens/Games";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route element={<Home />} path="/" />
 
           {/* GAMES */}
+          <Route element={<Games />} path="/games" />
           <Route element={<TicTacToe />} path="/game/TicTacToe" />
           <Route element={<Hangman />} path="/game/Hangman" />
           <Route element={<Authentication />} path="/authentication" />
